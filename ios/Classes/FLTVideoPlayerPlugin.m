@@ -341,13 +341,13 @@ NS_INLINE CGFloat radiansToDegrees(CGFloat radians) {
     // a size.
     if ((hasVideoTracks || hasNoTracks) && height == CGSizeZero.height &&
         width == CGSizeZero.width) {
-      // return;
+      return;
     }
     // The player may be initialized but still needs to determine the duration.
     int64_t duration = [self duration];
-    // if (duration == 0) {
-    //  return;
-    // }
+    if (duration == 0) {
+     return;
+    }
 
     _isInitialized = YES;
     _eventSink(@{
